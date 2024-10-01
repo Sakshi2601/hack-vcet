@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.homepage-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.course-card {
+    background-color: #222;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+.course-details {
+    background-color: #1a1a1a;
+    padding: 30px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.course-content {
+    max-width: 700px;
+    margin: auto;
+    text-align: left;
+}
+
+.course-header {
+    display: flex;
+    align-items: center;
+}
+
+.course-img {
+    width: 200px; /* Adjusted image size */
+    height: auto;
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+.close-btn {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #000;
+    border-radius: 5px;
+    float: right;
+}
+
+#certificate-btn {
+    background-color: #ffcc00;
+    padding: 10px 20px;
+    border: none;
+    color: #000;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+#certificate-btn.enabled {
+    cursor: pointer;
+    background-color: #00cc44;
+}
+
+.levels-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.level-card {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s;
+}
+
+.level-card:hover {
+    background-color: #444; /* Change color on hover */
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button[type="submit"] {
+    background-color: #ffcc00;
+    padding: 10px;
+    border: none;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#feedback-display {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    white-space: pre-wrap;
+    color: #ffcc00;
+}

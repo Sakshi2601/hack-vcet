@@ -5,56 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="icon" href="images/icon.jpg"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9a8562094e.js" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9a8562094e.js" crossorigin="anonymous"></script>
+  <script src="script.js" defer></script>
   <title>DigiVidya</title>
 </head>
 <body>
-<div class="main-container">
-    <!-- Start Landing Page -->
-    <div class="landing-page">
-        <header>
-          <!--navbar-->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-custom mx-auto">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">DigiVidya Learning Platform</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active mr-5" aria-current="page" href="#home">Home</a>
-              <a class="nav-link active mr-5" href="#course">Courses</a>
-              <a class="nav-link active" href="#about">About</a>
-              <a class="nav-link active" href="#contact">Contact</a>
-            </div>
-            <a href="./components/login.html">
-              <button class="btn login">Get Started</button>
-            </a>
+  <div class="main-container">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+      <div class="container-fluid">
+        <a class="navbar-brand me-5" href="#">DigiVidya Learning Platform</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link me-5" href="#home">Home</a>
+            <a class="nav-link me-5" href="#course">Courses</a>
+            <a class="nav-link me-5" href="#about">About</a>
+            <a class="nav-link me-5" href="#contact">Contact</a>
+            <a href="./components/login.html" class="btn btn-primary">Login</a>
           </div>
         </div>
-      </nav>
-        </header>
-        <div class="content">
-          <div class="container">
-            <div class="info">
-              <h5>Learn from Immersive Voice-Controlled Gaming Courses</h5>
-              <h1>DigiVidya Learning Platform </h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste, Repellendus odit nihil</p>
-              <button login>Enrol now</button>
+      </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <div class="landing-page">
+      <div class="container text-center text-lg-start d-lg-flex align-items-center py-5">
+        <div class="info">
+          <h5>Learn from Immersive Voice-Controlled Gaming Courses</h5>
+          <h1>DigiVidya Learning Platform</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <a href="#" class="btn btn-primary">Enroll Now</a>
+        </div>
+        <img class="main-image" src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-working-using-vr-tech-3840669-3202986.png?f=webp" alt="Immersive Learning">
+      </div>
+    </div>
+
+    <!-- Courses Section -->
+    <div class="container my-5" id="course">
+      <h3 class="text-center mb-4">Gamified Voice Controlled Courses</h3>
+      <div class="row justify-content-center">
+        <!-- Course Cards -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card bg-card text-white">
+            <img src="images/bio.jpg" class="card-img-top" alt="Biology Course">
+            <div class="card-body text-center">
+              <h5 class="card-title">Understand Biology: Beginners Course</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet.</p>
+              <p>Free</p>
+              <a href="./components/course.html" class="btn btn-primary">Learn More</a>
             </div>
-            <div class="image">
-              <img class="main-image" src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-working-using-vr-tech-3840669-3202986.png?f=webp">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card bg-card text-white">
+            <img src="images/OIG1.jpg" class="card-img-top" alt="Vocabulary Course">
+            <div class="card-body text-center">
+              <h5 class="card-title">Improve Your Vocabulary</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet.</p>
+              <p>$19.99</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card bg-card text-white">
+            <img src="images/carpentary.jpg" class="card-img-top" alt="Carpentry Course">
+            <div class="card-body text-center">
+              <h5 class="card-title">Learn Carpentry</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet.</p>
+              <p>$24.99</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card bg-card text-white">
+            <img src="images/chemistry.jpg" class="card-img-top" alt="Chemistry Course">
+            <div class="card-body text-center">
+              <h5 class="card-title">All About Chemistry</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet.</p>
+              <p>$19.99</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card bg-card text-white">
+            <img src="images/computer.jpg" class="card-img-top" alt="Computer Course">
+            <div class="card-body text-center">
+              <h5 class="card-title">Voice Based Computer Course</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet.</p>
+              <p>$19.99</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card bg-card text-white">
+            <img src="images/electronics.jpg" class="card-img-top" alt="Electronics Lab Course">
+            <div class="card-body text-center">
+              <h5 class="card-title">Your Own Electronics Lab</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet.</p>
+              <p>$24.55</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
             </div>
           </div>
         </div>
       </div>
-      <!-- End Landing Page -->
     </div>
 
-    <script> window.chtlConfig = { chatbotId: "1163292377" } </script>
-<script async data-id="1163292377" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+    <!-- Footer or other sections here -->
+
+  </div>
+
+  <script> window.chtlConfig = { chatbotId: "1163292377" } </script>
+  <script async data-id="1163292377" id="chatling-embed-script" src="https://chatling.ai/js/embed.js"></script>
+  <script src="../script/script.js"></script>
 </body>
 </html>
