@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Pitch Simulator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .container {
+      background: linear-gradient(145deg, #111, #222);
+      border-radius: 15px;
+      padding: 20px;
+      max-width: 400px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    
+    .scenario {
+      background-color: #333;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      color: #ddd;
+    }
+
+    .input-section {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .voice-text {
+      background-color: #111;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      color: #fff;
+      font-size: 14px;
+      resize: none;
+      min-height: 60px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #ff5722;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #ff784e;
+    }
+
+    .result {
+      background-color: #222;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .score {
+      color: #ff5722;
+      font-weight: bold;
+    }
+
+    .mic-btn {
+      background-color: #007bff;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .mic-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sales Pitch Simulator</h1>
+    <div class="scenario" id="scenario">
+      Scenario: You are selling a new software to a potential client. Convince them to buy it!
+    </div>
+    <div class="input-section">
+      <div class="mic-btn" onclick="startRecognition()">
+        🎤 Start Speaking
+      </div>
+      <div class="voice-text" id="pitchOutput" contenteditable="true">
+        Your pitch will appear here...
+      </div>
+      <button onclick="evaluatePitch()">Submit Pitch</button>
+    </div>
+    <div class="result" id="result">
+      <h3>Evaluation Result:</h3>
+      <p id="feedback"></p>
+      <p>Your Score: <span class="score" id="score"></span>/100</p>
+    </div>
+  </div>
+
+  <script>
+    const pitchOutput = document.getElementById('pitchOutput');
+    let recognition;
+    
+    // Initialize voice recognition
+    function startRecognition() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert('Your browser does not support voice recognition. Please use Google Chrome.');
+        return;
+      }
+
+      recognition = new webkitSpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+
+      recognition.start();
+
+      recognition.onresult = function(event) {
+        const speechResult = event.results[0][0].transcript;
+        pitchOutput.textContent = speechResult;
+      };
+
+      recognition.onerror = function(event) {
+        alert('Error occurred in recognition: ' + event.error);
+      };
+
+      recognition.onend = function() {
+        console.log('Voice recognition has stopped.');
+      };
+    }
+
+    function evaluatePitch() {
+      const pitch = pitchOutput.textContent.trim();
+      const feedback = document.getElementById('feedback');
+      const scoreElement = document.getElementById('score');
+      const resultBox = document.getElementById('result');
+      
+      let score = 0;
+      let feedbackText = "";
+
+      // Length-based scoring
+      if (pitch.length >= 100) {
+        score += 20;
+        feedbackText += "Great! Your pitch is detailed enough. ";
+      } else {
+        feedbackText += "Your pitch is too short. Please provide more details. ";
+      }
+
+      // Keyword-based scoring
+      const keywords = {
+        "discount": 10,
+        "offer": 10,
+        "benefit": 20,
+        "advantage": 20,
+        "solution": 20
+      };
+
+      for (let keyword in keywords) {
+        if (pitch.toLowerCase().includes(keyword)) {
+          score += keywords[keyword];
+          feedbackText += `Good use of the word "${keyword}". `;
+        }
+      }
+
+      // Generic feedback based on score
+      if (score >= 80) {
+        feedbackText += "Your pitch is strong and persuasive!";
+      } else if (score >= 50) {
+        feedbackText += "Your pitch is decent, but it could use more persuasive language.";
+      } else {
+        feedbackText += "Your pitch needs improvement. Focus more on benefits and client needs.";
+      }
+
+      // Display result
+      feedback.textContent = feedbackText;
+      scoreElement.textContent = score;
+      resultBox.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reader for Disabled Persons</title>
+    <link rel="stylesheet" href="../css/healthcare.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="content-pair">
+            <div class="text-container">
+                <h1>Module 1: Heart</h1>
+                <h2>Introduction of Heart</h2>
+                <textarea id="text-input1" rows="10" readonly>
+The heart is a muscular organ that pumps blood throughout the body, supplying it with oxygen and nutrients. The heart has four chambers, and is located in the middle of the chest, slightly behind and to the left of the breastbone. 
+Function: The heart receives deoxygenated blood from the body, sends it to the lungs, receives oxygenated blood from the lungs, and then distributes the oxygenated blood throughout the body.
+                </textarea>
+                <div class="controls">
+                    <button onclick="startReading('text-input1')">Read</button>
+                    <button onclick="pauseReading()">Pause</button>
+                    <button onclick="resumeReading()">Resume</button>
+                    <button onclick="stopReading()">Stop</button>
+                    <button onclick="startDictation()">Dictate</button>
+                </div>
+            </div>
+            <div class="image-container">
+                <h1>Heart Diagram</h1>
+                <img src="../images/image.png" alt="Heart Diagram" />
+                
+            </div>
+        </div>
+
+        <div class="content-pair">
+            <div class="text-container">
+                <h2>Components of Heart</h2>
+                <textarea id="text-input2" rows="10" readonly>
+The heart is a highly specialized organ with various critical components, each playing a vital role in ensuring proper blood circulation. These components include the chambers, valves, septa, muscles, and vessels. The four chambers—right atrium, right ventricle, left atrium, and left ventricle—are separated by one-way valves that ensure unidirectional blood flow. The tricuspid valve, pulmonary valve, mitral valve, and aortic valve each open and close to allow blood to flow between chambers and out to the body without backflow. The septa, or muscular walls, divide the heart into left and right halves, ensuring that oxygen-rich and oxygen-poor blood don’t mix. Additionally, papillary muscles and chordae tendineae support the heart valves, preventing them from inverting under pressure. The coronary arteries, which supply the heart muscle with oxygen-rich blood, and the pericardium, a protective sac that encases the heart, also play essential roles in maintaining the heart's health and function. Each of these components works together seamlessly to enable the heart’s continuous pumping action.
+                </textarea>
+            <div class="controls">
+                <button onclick="startReading('text-input2')">Read</button>
+                <button onclick="pauseReading()">Pause</button>
+                <button onclick="resumeReading()">Resume</button>
+                <button onclick="stopReading()">Stop</button>
+                <button onclick="startDictation()">Dictate</button>
+            </div>
+            </div>
+            <div class="image-container">
+                <h1>Components of Heart</h1>
+                <img src="../images/image copy.png" alt="Heart Diagram" />
+                
+            </div>
+        </div>
+
+        <div class="content-pair">
+            <div class="text-container">
+                <h2>Working of Heart</h2>
+                <textarea id="text-input3" rows="10" readonly>
+The heart's primary function is to serve as the body's central pump, moving blood throughout the circulatory system. This process begins when deoxygenated blood from the body enters the right atrium. The right atrium then pumps the blood into the right ventricle, which sends it to the lungs via the pulmonary artery for oxygenation. In the lungs, the blood releases carbon dioxide and picks up oxygen before returning to the left atrium. From there, the oxygenated blood is pumped into the left ventricle, which contracts powerfully to send the blood through the aorta and into the systemic circulation, delivering oxygen and nutrients to cells throughout the body. The heart's electrical conduction system regulates this process, ensuring that the heart contracts and relaxes in a coordinated rhythm. This electrical impulse begins in the sinoatrial (SA) node, often referred to as the heart's natural pacemaker, and travels through the atria to the atrioventricular (AV) node, down the bundle of His, and into the ventricles. This results in the familiar "lub-dub" sound of a heartbeat, which represents the closing of the heart valves as blood flows through the chambers. The entire cycle repeats continuously, ensuring that the body receives a constant supply of oxygenated blood to maintain vital functions.
+                </textarea>
+                <div class="controls">
+                    <button onclick="startReading('text-input3')">Read</button>
+                    <button onclick="pauseReading()">Pause</button>
+                    <button onclick="resumeReading()">Resume</button>
+                    <button onclick="stopReading()">Stop</button>
+                    <button onclick="startDictation()">Dictate</button>
+                </div>
+            </div>
+            <div class="image-container">
+                <h1>Working of Heart</h1>
+                <video controls width="570">
+                    <source src="https://media.istockphoto.com/id/607323948/video/blood-circulation-in-heart.mp4?s=mp4-640x640-is&k=20&c=sN1-iasqbgkt7g36ZGnb5AdmejXgoKx72Wparfgzb5c=" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+            </div>
+        </div>
+
+        <div class="empty-container"></div>
+
+        <p id="status"></p>
+    </div>
+
+    <script src="../script/healthcare.js"></script>
+    
+</body>
+</html>

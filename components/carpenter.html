@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reader for Disabled Persons</title>
+    <link rel="stylesheet" href="../css/carpenter.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="content-pair">
+            <div class="text-container">
+                <h1>Module 1: Know about Carpenters</h1>
+                <h2>Introduction of Carpenters</h2>
+                <textarea id="text-input1" rows="10" readonly>
+Let's learn Introduction of Carpenters - A carpenter is a skilled construction professional responsible for building, repairing, and installing structures using wood and other materials. They engage in a wide range of projects, from constructing highways and bridges to installing kitchen cabinets, showcasing their versatility and expertise. Carpenters typically acquire their skills through on-the-job training or apprenticeships, allowing them to gain hands-on experience while learning the trade. Many carpenters choose to specialize in specific areas, such as rough carpentry or wood flooring installation, which enables them to refine their craft and cater to niche markets. They rely on an array of tools, including both hand tools and power tools, to cut, shape, and assemble materials effectively. While carpenters generally own their tools, larger projects may require the use of rigging hardware and cranes. Adhering to safety regulations is paramount in their work, ensuring a secure environment while handling potentially hazardous equipment. To guide their construction efforts, carpenters refer to blueprints that outline the dimensions and materials needed for each project. The job outlook for carpenters remains positive, with employment projected to grow by 4% from 2023 to 2033, aligning with the average growth rate for all occupations, thus indicating a stable demand for skilled carpenters in the construction industry.
+                </textarea>
+                <div class="controls">
+                    <button onclick="startReading('text-input1')">Read</button>
+                    <button onclick="pauseReading()">Pause</button>
+                    <button onclick="resumeReading()">Resume</button>
+                    <button onclick="stopReading()">Stop</button>
+                    <button onclick="startDictation()">Dictate</button>
+                </div>
+            </div>
+            <div class="image-container">
+                <h1>Carpenters</h1>
+                <img src="../images/carpenter.jpg" alt="Heart Diagram" />
+                
+            </div>
+        </div>
+
+        <div class="content-pair">
+            <div class="text-container">
+                <h2>Tools and Equipments use by Carpenter</h2>
+                <textarea id="text-input2" rows="10" readonly>
+Tools and Equipments use by Carpenters . They utilize a diverse array of tools and equipment to efficiently build, repair, and install structures. Essential hand tools include hammers, tape measures, chisels, squares, and various saws for cutting and shaping wood. Power tools like circular saws, miter saws, drills, and nail guns significantly enhance productivity and precision. Safety equipment, such as safety glasses and dust masks, is crucial for protecting carpenters from potential hazards on the job. Additionally, specialized tools like joinery jigs and measuring devices help ensure accuracy in their work. Together, these tools enable carpenters to deliver high-quality craftsmanship in a variety of projects.
+                </textarea>
+            <div class="controls">
+                <button onclick="startReading('text-input2')">Read</button>
+                <button onclick="pauseReading()">Pause</button>
+                <button onclick="resumeReading()">Resume</button>
+                <button onclick="stopReading()">Stop</button>
+                <button onclick="startDictation()">Dictate</button>
+            </div>
+            </div>
+            <div class="image-container">
+                <h1>Tools and Equipments use by Carpenter</h1>
+                <img src="../images/tools.jpg" alt="Heart Diagram" />
+                
+            </div>
+        </div>
+
+        <div class="content-pair">
+            <div class="text-container">
+                <h2>Job of Carpenter</h2>
+                <textarea id="text-input3" rows="10" readonly>
+Carpenters are skilled professionals who perform a wide range of tasks in the construction and woodworking industries. Their work includes framing the structural framework of buildings, which encompasses constructing walls, roofs, and floors. In addition to rough carpentry, which focuses on hidden structural elements, carpenters engage in finish carpentry by installing trim, molding, and cabinetry to enhance interior aesthetics. They are also responsible for building outdoor structures such as decks, patios, and pergolas. Other important tasks include cabinetry design, repair and renovation of damaged structures, and the installation of doors and windows, ensuring proper fit and alignment. Carpenters often measure, cut, and prepare materials on-site and collaborate with architects and designers to understand project requirements, making their role essential to the success of construction and renovation projects.
+                </textarea>
+                <div class="controls">
+                    <button onclick="startReading('text-input3')">Read</button>
+                    <button onclick="pauseReading()">Pause</button>
+                    <button onclick="resumeReading()">Resume</button>
+                    <button onclick="stopReading()">Stop</button>
+                    <button onclick="startDictation()">Dictate</button>
+                </div>
+            </div>
+            <div class="image-container">
+                <h1>Job of Carpenter</h1>
+                <img src="../images/job.jpg" alt="Job Image" />
+            </div>
+            
+        </div>
+
+        <div class="empty-container"></div>
+
+        <p id="status"></p>
+    </div>
+
+    <script src="../script/carpenter.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Quiz</title>
+ 
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.quiz-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1533b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button#resetButton {
+    background-color: #f44336;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-card">
+            <h1>Industry Readiness Quiz</h1>
+            <p id="instructions">Answer the questions using your voice.</p>
+            <button id="startButton" onclick="startQuiz()">Start Quiz</button>
+            <button id="resetButton" onclick="resetQuiz()" style="display:none;">Reset Quiz</button>
+            <p id="question">Question: Where do you see yourself in 5 years?</p>
+            <p id="score">Score: 0</p>
+            <div id="feedback"></div>
+        </div>
+    </div>
+    <script >
+
+        // Initialize Speech Recognition API
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+
+recognition.continuous = false;
+recognition.lang = 'en-US';
+
+// Quiz state variables
+let score = 0;
+let quizStarted = false;
+let currentQuestionIndex = 0;
+
+// Interview and industry readiness questions
+const questions = [
+    "Where do you see yourself in 5 years?",
+    "What are your strengths and weaknesses?",
+    "How do you handle tight deadlines?",
+    "Describe a challenging project you've worked on.",
+    "What are your career goals?",
+];
+
+const keywords = {
+    "future": 10,
+    "skills": 10,
+    "growth": 10,
+    "challenge": 10,
+    "career": 10,
+};
+
+// Start the quiz
+function startQuiz() {
+    if (quizStarted) return;
+
+    score = 0;
+    currentQuestionIndex = 0;
+    quizStarted = true;
+
+    document.getElementById("score").textContent = "Score: 0";
+    document.getElementById("feedback").textContent = "";
+    document.getElementById("startButton").style.display = "none"; // Hide start button
+    document.getElementById("resetButton").style.display = "block"; // Show reset button
+
+    updateQuestion();
+    recognition.start();
+}
+
+// Handle voice input
+recognition.onresult = function(event) {
+    const answer = event.results[0][0].transcript.toLowerCase();
+    evaluateAnswer(answer);
+};
+
+// Evaluate the answer
+function evaluateAnswer(answer) {
+    let points = 0;
+
+    // Check for keywords
+    for (const keyword in keywords) {
+        if (answer.includes(keyword)) {
+            points += keywords[keyword];
+        }
+    }
+
+    score += points;
+    document.getElementById("score").textContent =` Score: ${score}`;
+    document.getElementById("feedback").textContent = `Answer: ${answer}`;
+
+    // Move to next question
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        updateQuestion();
+        recognition.start(); // Listen for next answer
+    } else {
+        endQuiz();
+    }
+}
+
+// Update question on the screen
+function updateQuestion() {
+    document.getElementById("question").textContent = `Question: ${questions[currentQuestionIndex]}`;
+}
+
+// End the quiz
+function endQuiz() {
+    quizStarted = false;
+    document.getElementById("startButton").style.display = "block"; // Show start button
+    document.getElementById("resetButton").style.display = "none"; // Hide reset button
+    document.getElementById("feedback").textContent = `Quiz Over! Your final score is ${score}.`;
+}
+
+// Reset the quiz
+function resetQuiz() {
+    score = 0;
+    currentQuestionIndex = 0;
+    document.getElementById("score").textContent = "Score: 0";
+    document.getElementById("feedback").textContent = "";
+    document.getElementById("question").textContent = "Get ready for your first question!";
+    document.getElementById("startButton").style.display = "block"; // Show start button
+    document.getElementById("resetButton").style.display = "none"; // Hide reset button
+    recognition.stop(); // Stop listening
+}
+
+    </script>
+</body>
+</html>

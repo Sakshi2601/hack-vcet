@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <title>Career Guidance Chatbot</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Career Guidance Chatbot</h1>
+        <button id="openChatbotBtn">Open Chatbot</button>
+        
+        <!-- Chatbot Modal -->
+        <div id="chatbotModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <iframe id="chatbot-frame" src="https://cdn.botpress.cloud/webchat/v2/shareable.html?botId=c4270590-9a3c-4c03-a85c-beb8e9d3ce11" width="400" height="600" style="border:none;"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../script/chatbot.js"></script>
+</body>
+</html>
