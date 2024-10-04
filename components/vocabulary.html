@@ -160,7 +160,7 @@
       let feedbackText = "";
 
       // Length-based scoring
-      if (pitch.length >= 100) {
+      if (pitch.length >= 50) {
         score += 20;
         feedbackText += "Great! Your pitch is detailed enough. ";
       } else {
@@ -169,12 +169,61 @@
 
       // Keyword-based scoring
       const keywords = {
-        "discount": 10,
-        "offer": 10,
-        "benefit": 20,
-        "advantage": 20,
-        "solution": 20
-      };
+  "discount": 10,
+  "offer": 10,
+  "benefit": 20,
+  "advantage": 20,
+  "solution": 20,
+  "Efficient": 10,
+  "Innovative": 20,
+  "Reliable": 10,
+  "Secure": 10,
+  "Scalable": 10,
+  "User-friendly": 15,
+  "Cost-effective": 15,
+  "Customizable": 15,
+  "Support": 10,
+  "Performance": 10,
+  "Optimization": 15,
+  "Automation": 20,
+  "Integration": 15,
+  "Productivity": 15,
+  "Features": 10,
+  "Flexibility": 15,
+  "Data": 10,
+  "Speed": 10,
+  "Control": 10,
+  "Savings": 20,
+  "Time-saving": 20,
+  "Easy-to-use": 15,
+  "Value": 15,
+  "Functionality": 15,
+  "Cloud-based": 20,
+  "Collaboration": 15,
+  "Analytics": 15,
+  "Insights": 15,
+  "Growth": 15,
+  "Maintenance": 10,
+  "Versatile": 15,
+  "Responsive": 15,
+  "Accessibility": 15,
+  "ROI": 20,
+  "Compatibility": 15,
+  "Mobile-friendly": 15,
+  "Upgrades": 10,
+  "Innovation": 20,
+  "Competitive": 15,
+  "Strategy": 15,
+  "Transformation": 20,
+  "Cutting-edge": 20,
+  "Simplified": 15,
+  "Satisfaction": 15,
+  "Compliance": 10,
+  "Reporting": 10,
+  "Quality": 15,
+  "Future-proof": 20,
+  "Streamlined": 15
+};
 
       for (let keyword in keywords) {
         if (pitch.toLowerCase().includes(keyword)) {

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Image Quiz</title>
+    <link rel="stylesheet" href="../css/medical.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Image Quiz</h1>
+        <img id="medicalImage" src="../images/medical.jpg" alt="Medical Image" class="medical-image">
+        <div class="controls">
+            <button id="startBtn" class="btn">Start Quiz</button>
+        </div>
+        <p id="status"></p>
+        <audio id="audio" src=""></audio>
+    </div>
+    
+    <script src="../script/medical.js"></script>
+</body>
+</html>

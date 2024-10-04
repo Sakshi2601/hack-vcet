@@ -28,3 +28,48 @@ function submitFeedback(event) {
       document.getElementById('feedback-form').reset();
   }
 }
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const loginBtn = document.getElementById("login-btn");
+  const profileBtn = document.getElementById("profile-btn");
+  const logoutBtn = document.getElementById("logout-btn");
+
+  // Function to check login status
+  function checkLoginStatus() {
+    const loggedIn = localStorage.getItem('loggedIn');
+    if (loggedIn === 'true') {
+      loginBtn.style.display = 'none';  // Hide login button
+      profileBtn.style.display = 'inline-block'; // Show profile button
+      logoutBtn.style.display = 'inline-block'; // Show logout button
+    } else {
+      loginBtn.style.display = 'inline-block'; // Show login button
+      profileBtn.style.display = 'none';  // Hide profile button
+      logoutBtn.style.display = 'none';  // Hide logout button
+    }
+  }
+
+  // Event listener for login button
+  loginBtn.addEventListener("click", function() {
+    localStorage.setItem('loggedIn', 'true');
+    checkLoginStatus();
+  });
+
+  // Event listener for logout button
+  logoutBtn.addEventListener("click", function() {
+    localStorage.setItem('loggedIn', 'false');
+    alert("You have been logged out.");
+    checkLoginStatus();
+  });
+
+  // Event listener for profile button (can add more functionality here)
+  profileBtn.addEventListener("click", function() {
+    alert("Welcome to your profile!");
+    // Redirect to profile page if needed
+  });
+
+  // Initialize the buttons based on login status
+  checkLoginStatus();
+});
